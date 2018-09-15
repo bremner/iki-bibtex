@@ -208,7 +208,7 @@ sub format_citation() {
 		  if( $publisher =~ /(.*)\.$/ ){
 				$publisher = $1;
 		  }
-		  $output=$output."*$publisher.* ";
+		  $output=$output."*$publisher*. ";
 	 }
 
 	 my $volume;
