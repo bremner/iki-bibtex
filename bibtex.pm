@@ -199,11 +199,11 @@ sub format_citation() {
 		  $output=$output."**$title.** ";
 	 }
 	 if( defined $journal ){
-		  $output=$output."*$journal.* ";
-		  if( $journal =~ /(.*)\.$/ ){
-				$journal = $1;
-		  }
-	 }
+                 if( $journal =~ /(.*)\.$/ ){
+                         $journal = $1;
+                 }
+                 $output=$output."*$journal.* ";
+         }
 	 if( defined $publisher ){
 		  if( $publisher =~ /(.*)\.$/ ){
 				$publisher = $1;
