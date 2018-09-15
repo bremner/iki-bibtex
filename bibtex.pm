@@ -174,8 +174,10 @@ sub format_citation() {
 	 my $journal;
 	 my $publisher;
 	 my $year;
-	 ($title,$year,$journal,$publisher)=$entry->get('title','year',
-																	'journal','publisher');
+         my $booktitle;
+
+	 ($title,$year,$journal,$publisher,$booktitle)=$entry->get('title','year',
+                                                                   'journal','publisher','booktitle');
 	 if( defined $year ){
 		  $output=$output."($year): ";
 	 }
@@ -203,6 +205,8 @@ sub format_citation() {
                          $journal = $1;
                  }
                  $output=$output."*$journal.* ";
+         } elsif (defined $booktitle){
+                 $output=$output."*$booktitle.* ";
          }
 	 if( defined $publisher ){
 		  if( $publisher =~ /(.*)\.$/ ){
